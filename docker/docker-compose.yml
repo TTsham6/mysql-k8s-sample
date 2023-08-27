@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mysql:
+    container_name: "sample-mysql-container"
+    image: "sham6/sample-mysql:${TAG}"
+    build:
+      dockerfile: ./Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      TZ: "Asia/Tokyo"
+    ports:
+      - 3306:3306
